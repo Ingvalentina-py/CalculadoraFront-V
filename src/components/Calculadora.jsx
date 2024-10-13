@@ -29,7 +29,7 @@ function Calculadora() {
     };
 
     const handleSortAsc = () => {
-        fetch('http://localhost:3500/v1/calculadora/sortAsc', {
+        fetch('calculadora-back-v.vercel.app/v1/calculadora/sortAsc', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ numbers: selectedNumbers })
@@ -39,7 +39,7 @@ function Calculadora() {
     };
 
     const handleSortDesc = () => {
-        fetch('http://localhost:3500/v1/calculadora/sortDesc', {
+        fetch('calculadora-back-v.vercel.app/v1/calculadora/sortDesc', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ numbers: selectedNumbers })
@@ -50,7 +50,7 @@ function Calculadora() {
 
     const handleEquation = () => {
         const values = Object.fromEntries(numbers.map(item => [item.letter, Number(item.value)]));
-        fetch('http://localhost:3500/v1/calculadora/equation', {
+        fetch('calculadora-back-v.vercel.app/v1/calculadora/equation', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ equation, values })
